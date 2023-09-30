@@ -1,24 +1,22 @@
-terraform {
-    required_providers {
-        scalr = {
-            source = "registry.scalr.io/scalr/scalr"
-            version= "~> 1.4.0"
-        }
-    }
+data "scalr_vcs_provider" "zetta" {
+  name = "zetta"
+  account_id = var.account_id
 }
-
-variable "account_id" {
-  # this a secret? Nah
-  default = "acc-v0o347t4e78tekfq0"
-}
-
-provider scalr {
-  hostname = "zetta.scalr.io"
-}
-
 
 resource "scalr_environment" "main" {
   name       = "main"
   cost_estimation_enabled = false
   account_id = var.account_id
+}
+
+resource "scalr_workspace" "vcs-driven" {
+  name            = "zetta_scalr_io"
+  environment_id  = scalr_environment.main.id
+  vcs_provider_id = data.scalr_vcs_provider.zetta.id
+
+  vcs_repo {
+      identifier          = "zetta/zetta.scalr.io"
+      branch              = "main"
+      dry_run_enabled = true
+  }
 }
