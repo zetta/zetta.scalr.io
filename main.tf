@@ -17,6 +17,6 @@ resource "scalr_workspace" "vcs-driven" {
   vcs_repo {
       identifier          = "zetta/zetta.scalr.io"
       branch              = "main"
-      dry_run_enabled = true
+      dry_runs_enabled = true
   }
 }
