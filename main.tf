@@ -14,7 +14,7 @@ resource "scalr_environment" "main" {
   account_id = var.account_id
 }
 
-resource "scalr_workspace" "vcs-driven" {
+resource "scalr_workspace" "scalr_meta" {
   name            = "zetta_scalr_io"
   environment_id  = scalr_environment.main.id
   vcs_provider_id = data.scalr_vcs_provider.zetta.id
