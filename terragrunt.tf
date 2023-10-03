@@ -9,7 +9,7 @@ resource "scalr_workspace" "terragrunt_dev" {
   environment_id  = scalr_environment.terragrunt.id
   vcs_provider_id = data.scalr_vcs_provider.zetta.id
   auto_apply      = true
-  working_directory = "terragunt/dev"
+  working_directory = "terragrunt/dev"
 
   vcs_repo {
       identifier          = "zetta/scalr-examples"
@@ -23,7 +23,7 @@ resource "scalr_workspace" "terragrunt_stg" {
   environment_id  = scalr_environment.terragrunt.id
 #   vcs_provider_id = data.scalr_vcs_provider.zetta.id
   auto_apply      = true
-  working_directory = "terragunt/stg"
+  working_directory = "terragrunt/stg"
 
 #   vcs_repo {
 #       identifier          = "zetta/scalr-examples"
@@ -37,7 +37,7 @@ resource "scalr_workspace" "terragrunt_prod" {
   environment_id  = scalr_environment.terragrunt.id
 #   vcs_provider_id = data.scalr_vcs_provider.zetta.id
   auto_apply      = true
-  working_directory = "terragunt/prod"
+  working_directory = "terragrunt/prod"
 
 #   vcs_repo {
 #       identifier          = "zetta/scalr-examples"
