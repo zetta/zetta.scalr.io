@@ -12,7 +12,7 @@ resource "scalr_workspace" "terragrunt_dev" {
   working_directory = "terragunt/dev"
 
   vcs_repo {
-      identifier          = "zetta/terragrunt-examples"
+      identifier          = "zetta/scalr-examples"
       branch              = "main"
       dry_runs_enabled = true
   }
@@ -26,7 +26,7 @@ resource "scalr_workspace" "terragrunt_stg" {
   working_directory = "terragunt/stg"
 
   vcs_repo {
-      identifier          = "zetta/terragrunt-examples"
+      identifier          = "zetta/scalr-examples"
       branch              = "main"
       dry_runs_enabled = true
   }
@@ -40,7 +40,7 @@ resource "scalr_workspace" "terragrunt_prod" {
   working_directory = "terragunt/prod"
 
   vcs_repo {
-      identifier          = "zetta/terragrunt-examples"
+      identifier          = "zetta/scalr-examples"
       branch              = "main"
       dry_runs_enabled = true
   }
