@@ -11,7 +11,7 @@ resource "scalr_workspace" "terragrunt_dev" {
 }
 
 resource "scalr_variable" "dev_env" {
-  key          = "env"
+  key          = "environment"
   value        = "dev"
   category     = "terraform"
   workspace_id = scalr_workspace.terragrunt_dev.id
@@ -24,7 +24,7 @@ resource "scalr_workspace" "terragrunt_stg" {
 }
 
 resource "scalr_variable" "stg_env" {
-  key          = "env"
+  key          = "environment"
   value        = "stg"
   category     = "terraform"
   workspace_id = scalr_workspace.terragrunt_stg.id
@@ -37,7 +37,7 @@ resource "scalr_workspace" "terragrunt_prod" {
 }
 
 resource "scalr_variable" "prod_env" {
-  key          = "env"
+  key          = "environment"
   value        = "prod"
   category     = "terraform"
   workspace_id = scalr_workspace.terragrunt_prod.id
