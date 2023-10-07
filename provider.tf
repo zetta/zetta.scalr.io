@@ -1,7 +1,8 @@
 terraform {
     required_providers {
         scalr = {
-            version= "~> 1.4.0"
+            source  = "Scalr/scalr"
+            version = "~> 1.4.0"
         }
     }
     backend "remote" {
